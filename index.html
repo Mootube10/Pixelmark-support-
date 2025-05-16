@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PixelMart</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.add('hidden'));
+      document.getElementById(pageId).classList.remove('hidden');
+    }
+    window.addEventListener('DOMContentLoaded', () => showPage('home'));
+  </script>
 </head>
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
@@ -12,16 +20,16 @@
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold">PixelMart</h1>
       <nav class="space-x-4">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#qa" class="hover:underline">Q&A</a>
-        <a href="#links" class="hover:underline">Links</a>
-        <a href="#support" class="hover:underline">Support</a>
+        <button onclick="showPage('home')" class="hover:underline">Home</button>
+        <button onclick="showPage('qa')" class="hover:underline">Q&A</button>
+        <button onclick="showPage('links')" class="hover:underline">Links</button>
+        <button onclick="showPage('support')" class="hover:underline">Support</button>
       </nav>
     </div>
   </header>
 
   <!-- Main Page -->
-  <section id="home" class="p-10 text-center bg-white">
+  <section id="home" class="page p-10 text-center bg-white hidden">
     <h2 class="text-4xl font-bold mb-4">Welcome to PixelMart</h2>
     <p class="text-lg">A modern Roblox company focused on innovation and creativity.</p>
     <div class="mt-6 space-x-4">
@@ -31,7 +39,7 @@
   </section>
 
   <!-- Q&A Section -->
-  <section id="qa" class="p-10 bg-gray-50">
+  <section id="qa" class="page p-10 bg-gray-50 hidden">
     <h2 class="text-3xl font-bold text-center mb-6">Q&A</h2>
     <div class="max-w-2xl mx-auto space-y-4">
       <div>
@@ -46,7 +54,7 @@
   </section>
 
   <!-- Links Section -->
-  <section id="links" class="p-10 bg-white">
+  <section id="links" class="page p-10 bg-white hidden">
     <h2 class="text-3xl font-bold text-center mb-6">Links</h2>
     <div class="text-center space-y-4">
       <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="block text-yellow-800 underline">Roblox Group</a>
@@ -56,7 +64,7 @@
   </section>
 
   <!-- Support Section -->
-  <section id="support" class="p-10 bg-gray-50 text-center">
+  <section id="support" class="page p-10 bg-gray-50 text-center hidden">
     <h2 class="text-3xl font-bold mb-4">Support</h2>
     <p class="text-lg">Need help? Please join our <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="text-yellow-800 underline">Discord server</a> for support.</p>
   </section>
