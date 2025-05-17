@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixelmark</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.discordapp.com/attachments/1263105198033731676/1298560596681424907/image.png?ex=6828ee8c&is=68279d0c&hm=62ab0fdd20e2ae19192df0dc797db60c250498b85ad9f2177385cc0717efe355&" rel="stylesheet">
   <script>
     function showPage(pageId) {
       const pages = document.querySelectorAll('.page');
@@ -16,19 +16,24 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
-  <header class="bg-yellow-900 text-white p-6">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <h1 class="text-3xl font-bold mb-4 md:mb-0">Pixelmark</h1>
-      <nav class="space-x-4">
+  <header class="bg-yellow-900 text-white p-6 relative">
+    <div class="container mx-auto flex justify-center items-center relative">
+      <!-- Centered Navigation -->
+      <nav class="space-x-6 text-lg">
         <button onclick="showPage('home')" class="hover:underline">Home</button>
         <button onclick="showPage('qa')" class="hover:underline">Q&A</button>
         <button onclick="showPage('links')" class="hover:underline">Links</button>
         <button onclick="showPage('support')" class="hover:underline">Support</button>
       </nav>
+
+      <!-- Logo on top right -->
+      <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+        <img src="https://www.roblox.com/Thumbs/Asset.ashx?width=50&height=50&assetId=18361728089" alt="Pixelmark Logo" class="w-10 h-10 rounded-full">
+      </div>
     </div>
   </header>
 
-  <!-- Home Page -->
+  <!-- Main Page -->
   <section id="home" class="page p-10 bg-white hidden">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <h2 class="text-4xl font-bold">Welcome to Pixelmark</h2>
@@ -92,8 +97,6 @@
       <a href="https://www.roblox.com/games/16548464963/Pixelmark-V1" target="_blank" class="block text-yellow-800 underline">Pixelmark V1</a>
       <a href="https://www.roblox.com/games/18405460868/Pixelmark-A-C" target="_blank" class="block text-yellow-800 underline">Pixelmark Application Center</a>
       <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="block text-yellow-800 underline">Discord Server</a>
-    </div>
-  </section>
 
   <!-- Support Section -->
   <section id="support" class="page p-10 bg-gray-50 text-center hidden">
