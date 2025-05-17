@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PixelMark</title>
+  <title>Pixelmark</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script>
     function showPage(pageId) {
@@ -17,8 +17,8 @@
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
   <header class="bg-yellow-900 text-white p-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold">PixelMark</h1>
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-3xl font-bold mb-4 md:mb-0">Pixelmark</h1>
       <nav class="space-x-4">
         <button onclick="showPage('home')" class="hover:underline">Home</button>
         <button onclick="showPage('qa')" class="hover:underline">Q&A</button>
@@ -28,31 +28,38 @@
     </div>
   </header>
 
-  <!-- Main Page -->
-  <section id="home" class="page p-10 text-center bg-white hidden">
-    <h2 class="text-4xl font-bold mb-4">Welcome to PixelMark</h2>
-    <p class="text-lg space-y-4">
-  <strong>Your #1 Roblox Shopping Destination</strong><br>
-  At PixelMark, we're changing virtual shopping. From fashionable avatar attire to extended in-game experiences, we provide you with a seamless blend of style, creativity, and community. We've designed our website for Roblox players who require more than a look – they require self-expression.
-</p>
-<p class="text-lg mt-4">
-  🎮 <strong>Explore Our Roblox Game:</strong><br>
-  Dive into Pixelmark V3 – a live shopping experience where you can try on apparel, hang out, and discover limited items that can only be discovered through our experience.
-</p>
-<p class="text-lg mt-4">
-  🛒 <strong>What We Offer:</strong><br>
-  - Limited-edition and affordable avatar clothing<br>
-  - Seasonal drops and limited-release collections<br>
-  - A fashion-forward community of Roblox players that's increasing in size rapidly<br>
-  - Group-only events, giveaways, and perks
-</p>
-<p class="text-lg mt-4">
-  🤝 <strong>Become a Member of the Community:</strong><br>
-  Be part of something more. No matter if you're a casual player or a serious fashionista, PixelMark has something for you.
-</p>
-    <div class="mt-6 space-x-4">
-      <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Join Discord</a>
-      <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Visit Roblox Group</a>
+  <!-- Home Page -->
+  <section id="home" class="page p-10 bg-white hidden">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h2 class="text-4xl font-bold">Welcome to Pixelmark</h2>
+      <p class="text-lg">
+        <strong>Your #1 Roblox Shopping Destination</strong><br>
+        At Pixelmark, we're changing virtual shopping. From fashionable avatar attire to extended in-game experiences,
+        we provide you with a seamless blend of style, creativity, and community. We've designed our website for Roblox
+        players who require more than a look – they require self-expression.
+      </p>
+      <p class="text-lg">
+        🎮 <strong>Explore Our Roblox Game:</strong><br>
+        Dive into Pixelmark V3 – a live shopping experience where you can try on apparel, hang out, and discover
+        limited items that can only be discovered through our experience.
+      </p>
+      <div class="text-left text-lg">
+        <p class="font-semibold">🛒 What We Offer:</p>
+        <ul class="list-disc list-inside pl-4">
+          <li>Limited-edition and affordable avatar clothing</li>
+          <li>Seasonal drops and limited-release collections</li>
+          <li>A fashion-forward community of Roblox players that's increasing in size rapidly</li>
+          <li>Group-only events, giveaways, and perks</li>
+        </ul>
+      </div>
+      <p class="text-lg">
+        🤝 <strong>Become a Member of the Community:</strong><br>
+        Be part of something more. No matter if you're a casual player or a serious fashionista, Pixelmark has something for you.
+      </p>
+      <div class="space-x-4">
+        <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Join Discord</a>
+        <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Visit Roblox Group</a>
+      </div>
     </div>
   </section>
 
@@ -61,16 +68,16 @@
     <h2 class="text-3xl font-bold text-center mb-6">Q&A</h2>
     <div class="max-w-2xl mx-auto space-y-4">
       <div>
-        <h3 class="font-semibold">Q: What is PixelMark?</h3>
-        <p>A: A Ro-shopping company and yoru number 1 Shopping destination.</p>
+        <h3 class="font-semibold">Q: What is Pixelmark?</h3>
+        <p>A: Pixelmark is a Roblox-based company and your #1 shopping destination.</p>
       </div>
       <div>
         <h3 class="font-semibold">Q: How can I join the community?</h3>
-        <p>A: You can join our Roblox group and Discord server. By using the links tab on the website top right </p>
+        <p>A: You can join our Roblox group and Discord server by using the links section at the top of the website.</p>
       </div>
-      </div>
-        <h3 class="font-semibold">Q: How do I Become Staff?</h3>
-        <p>A: Go onto our Application center which can be found on our links section.</p>
+      <div>
+        <h3 class="font-semibold">Q: How do I become staff?</h3>
+        <p>A: Go to our Application Center found in the Links section.</p>
       </div>
     </div>
   </section>
@@ -80,10 +87,10 @@
     <h2 class="text-3xl font-bold text-center mb-6">Links</h2>
     <div class="text-center space-y-4">
       <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="block text-yellow-800 underline">Roblox Group</a>
-      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank" class="block text-yellow-800 underline">Pixelmark V3</a>
-      <a href="https://www.roblox.com/games/17395217964/Pixelmark-V2" target="_blank" class="blocj text-yellow-800 underlibe">Pixelmark V2</a>
-      <a href="https://www.roblox.com/games/16548464963/Pixelmark-V1" target="_blank" class="blocj text-yellow-800 underlibe">Pixelmark V1</a>
-      <a href="https://www.roblox.com/games/18405460868/Pixelmark-A-C" target="_blank" class="blocj text-yellow-800 underlibe">Pixelmark Application Center</a>
+      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank" class="block text-yellow-800 underline">Pixelmark V3 (Main Game)</a>
+      <a href="https://www.roblox.com/games/17395217964/Pixelmark-V2" target="_blank" class="block text-yellow-800 underline">Pixelmark V2</a>
+      <a href="https://www.roblox.com/games/16548464963/Pixelmark-V1" target="_blank" class="block text-yellow-800 underline">Pixelmark V1</a>
+      <a href="https://www.roblox.com/games/18405460868/Pixelmark-A-C" target="_blank" class="block text-yellow-800 underline">Pixelmark Application Center</a>
       <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="block text-yellow-800 underline">Discord Server</a>
     </div>
   </section>
@@ -96,7 +103,7 @@
 
   <!-- Footer -->
   <footer class="bg-yellow-900 text-white text-center p-4">
-    <p>&copy; 2025 PixelMart. All rights reserved.</p>
+    <p>&copy; 2025 Pixelmark. All rights reserved.</p>
   </footer>
 </body>
 </html>
