@@ -6,7 +6,7 @@
   <title>Pixelmark PLC</title>
   <style>
     :root {
-      --main-color: #5a3d2b; /* brown-ish */
+      --main-color: #5a3d2b;
       --text-color: #333;
       --bg-color: #fff;
     }
@@ -38,9 +38,14 @@
       text-decoration: none;
       color: var(--main-color);
       font-weight: bold;
+      cursor: pointer;
     }
     .container {
       padding: 2rem;
+      display: none;
+    }
+    .active {
+      display: block;
     }
     footer {
       background: var(--main-color);
@@ -68,25 +73,29 @@
     <p>Official Website</p>
   </header>
   <nav>
-    <a href="#main">Main</a>
-    <a href="#qa">Q&A</a>
-    <a href="#support">Support</a>
-    <a href="#links">Links</a>
+    <a onclick="showSection('main')">Main</a>
+    <a onclick="showSection('qa')">Q&A</a>
+    <a onclick="showSection('support')">Support</a>
+    <a onclick="showSection('links')">Links</a>
   </nav>
-  <div class="container" id="main">
+
+  <div id="main" class="container active">
     <h2>Welcome to Pixelmark PLC</h2>
     <p>Pixelmark is a leading company on Roblox offering a unique shopping and roleplay experience. Join us as we continue to grow and offer amazing services to our community!</p>
   </div>
-  <div class="container" id="qa">
+
+  <div id="qa" class="container">
     <h2>Q&A</h2>
     <p><strong>Q: What is Pixelmark?</strong><br>A: Pixelmark is a shopping and roleplay group on Roblox.</p>
     <p><strong>Q: How do I join the team?</strong><br>A: Applications open in our Discord server. Join to stay updated!</p>
   </div>
-  <div class="container" id="support">
+
+  <div id="support" class="container">
     <h2>Support</h2>
     <p>For help or issues, please join our <a href="https://discord.gg/rvT2tEyDk7" target="_blank">Discord server</a>.</p>
   </div>
-  <div class="container" id="links">
+
+  <div id="links" class="container">
     <h2>Important Links</h2>
     <ul>
       <li><a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">Roblox Group</a></li>
@@ -94,27 +103,31 @@
       <li><a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Main Game</a></li>
     </ul>
   </div>
-  <div class="container" id="auth" style="display:none;">
+
+  <div id="auth" class="container">
     <h2>Roblox Authorization</h2>
     <p>If you were redirected here, please continue the Roblox authentication process.</p>
   </div>
+
   <footer>
     <p>&copy; 2025 Pixelmark PLC. All rights reserved.</p>
   </footer>
+
   <script>
-    // Dark mode toggle
     function toggleDarkMode() {
       const current = document.documentElement.getAttribute('data-theme');
       document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
     }
 
-    // Show auth page if hash is #auth-link
+    function showSection(id) {
+      const sections = document.querySelectorAll('.container');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Auto-show Roblox auth page if #auth-link is in URL
     if (window.location.hash === '#auth-link') {
-      document.getElementById('main').style.display = 'none';
-      document.getElementById('qa').style.display = 'none';
-      document.getElementById('support').style.display = 'none';
-      document.getElementById('links').style.display = 'none';
-      document.getElementById('auth').style.display = 'block';
+      showSection('auth');
     }
   </script>
 </body>
