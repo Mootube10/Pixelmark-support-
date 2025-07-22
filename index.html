@@ -3,118 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixelmark</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    function showPage(pageId) {
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.classList.add('hidden'));
-      document.getElementById(pageId).classList.remove('hidden');
+  <title>Pixelmark PLC</title>
+  <style>
+    :root {
+      --main-color: #5a3d2b; /* brown-ish */
+      --text-color: #333;
+      --bg-color: #fff;
     }
-    window.addEventListener('DOMContentLoaded', () => showPage('home'));
-  </script>
+    [data-theme="dark"] {
+      --main-color: #5a3d2b;
+      --text-color: #eee;
+      --bg-color: #1a1a1a;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      background: var(--main-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #eee;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+    }
+    footer {
+      background: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--main-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <!-- Header -->
-  <header class="bg-yellow-900 text-white p-6">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <h1 class="text-3xl font-bold mb-4 md:mb-0">Pixelmark</h1>
-      <nav class="space-x-4">
-        <button onclick="showPage('home')" class="hover:underline">Home</button>
-        <button onclick="showPage('qa')" class="hover:underline">Q&A</button>
-        <button onclick="showPage('links')" class="hover:underline">Links</button>
-        <button onclick="showPage('support')" class="hover:underline">Support</button>
-        <button onclick="showPage('team')" class="hover:underline">Team</button>
-      </nav>
-    </div>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <header>
+    <h1>Pixelmark PLC</h1>
+    <p>Official Website</p>
   </header>
-
-  <!-- Home Page -->
-  <section id="home" class="page p-10 bg-white hidden">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
-      <h2 class="text-4xl font-bold">Welcome to Pixelmark</h2>
-      <p class="text-lg">
-        <strong>I (Felixpro202110) started Pixelmark PLC on May 24, 2023. Our team is dedicated to providing a great shopping experience. But more than that, Pixelmark PLC is a community. We're here to share, create, and have fun together. Thanks for joining us on this exciting journey! Our current Goal is to reach 100 Human Members, you can help us archive that Goal by joining or/and invite your Friends. </strong><br>
-      <div class="space-x-4">
-        <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Join Discord</a>
-        <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="bg-yellow-800 text-white px-4 py-2 rounded">Visit Roblox Group</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Q&A Section -->
-  <section id="qa" class="page p-10 bg-gray-50 hidden">
-    <h2 class="text-3xl font-bold text-center mb-6">Q&A</h2>
-    <div class="max-w-2xl mx-auto space-y-4">
-      <div>
-        <h3 class="font-semibold">Q: What is Pixelmark?</h3>
-        <p>A: Pixelmark is a Roblox-based company and your #1 shopping destination.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold">Q: How can I join the community?</h3>
-        <p>A: You can join our Roblox group and Discord server by using the links section at the top of the website.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold">Q: How do I become staff?</h3>
-        <p>A: Go to our Application Center found in the Links section.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Links Section -->
-  <section id="links" class="page p-10 bg-white hidden">
-    <h2 class="text-3xl font-bold text-center mb-6">Links</h2>
-    <div class="text-center space-y-4">
-      <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank" class="block text-yellow-800 underline">Roblox Group</a>
-      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank" class="block text-yellow-800 underline">Pixelmark V3 (Main Game)</a>
-      <a href="https://www.roblox.com/games/17395217964/Pixelmark-V2" target="_blank" class="block text-yellow-800 underline">Pixelmark V2</a>
-      <a href="https://www.roblox.com/games/16548464963/Pixelmark-V1" target="_blank" class="block text-yellow-800 underline">Pixelmark V1</a>
-      <a href="https://www.roblox.com/games/18405460868/Pixelmark-A-C" target="_blank" class="block text-yellow-800 underline">Pixelmark Application Center</a>
-      <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="block text-yellow-800 underline">Discord Server</a>
-    </div>
-  </section>
-
-  <!-- Support Section -->
-  <section id="support" class="page p-10 bg-gray-50 text-center hidden">
-    <h2 class="text-3xl font-bold mb-4">Support</h2>
-    <p class="text-lg">Need help? Please join our <a href="https://discord.gg/rvT2tEyDk7" target="_blank" class="text-yellow-800 underline">Discord server</a> for support.</p>
-  </section>
-
-  <!-- Team Section -->
-  <section id="team" class="page p-10 bg-white hidden">
-    <h2 class="text-4xl font-bold text-center mb-10">Our Team</h2>
-
-    <!-- S.L.T Section -->
-    <div class="mb-12">
-      <h3 class="text-2xl font-semibold mb-6 text-center">S.L.T (Senior Leadership Team)</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="text-center">
-          <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-ACC2E27D14BB1ADA51C5C06F1F08414B-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Felixpro202110" class="mx-auto rounded-full w-24 h-24">
-          <p class="mt-2 font-bold">Felixpro202110</p>
-          <p class="text-sm text-gray-600">Founder & CEO</p>
-        </div>
-        <!-- Add more S.L.T members here -->
-      </div>
-    </div>
-
-    <!-- D.T Section -->
-    <div>
-      <h3 class="text-2xl font-semibold mb-6 text-center">D.T (Development Team)</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="text-center">
-          <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-92D49209B8CB07D021D2228E8F6E3117-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="DamianS201209" class="mx-auto rounded-full w-24 h-24">
-          <p class="mt-2 font-bold">DamianS201209</p>
-          <p class="text-sm text-gray-600">Junior Developer</p>
-        </div>
-        <!-- Add more D.T members here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-yellow-900 text-white text-center p-4">
-    <p>&copy; 2025 Pixelmark. All rights reserved.</p>
+  <nav>
+    <a href="#main">Main</a>
+    <a href="#qa">Q&A</a>
+    <a href="#support">Support</a>
+    <a href="#links">Links</a>
+  </nav>
+  <div class="container" id="main">
+    <h2>Welcome to Pixelmark PLC</h2>
+    <p>Pixelmark is a leading company on Roblox offering a unique shopping and roleplay experience. Join us as we continue to grow and offer amazing services to our community!</p>
+  </div>
+  <div class="container" id="qa">
+    <h2>Q&A</h2>
+    <p><strong>Q: What is Pixelmark?</strong><br>A: Pixelmark is a shopping and roleplay group on Roblox.</p>
+    <p><strong>Q: How do I join the team?</strong><br>A: Applications open in our Discord server. Join to stay updated!</p>
+  </div>
+  <div class="container" id="support">
+    <h2>Support</h2>
+    <p>For help or issues, please join our <a href="https://discord.gg/rvT2tEyDk7" target="_blank">Discord server</a>.</p>
+  </div>
+  <div class="container" id="links">
+    <h2>Important Links</h2>
+    <ul>
+      <li><a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">Roblox Group</a></li>
+      <li><a href="https://discord.gg/rvT2tEyDk7" target="_blank">Discord Server</a></li>
+      <li><a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Main Game</a></li>
+    </ul>
+  </div>
+  <div class="container" id="auth" style="display:none;">
+    <h2>Roblox Authorization</h2>
+    <p>If you were redirected here, please continue the Roblox authentication process.</p>
+  </div>
+  <footer>
+    <p>&copy; 2025 Pixelmark PLC. All rights reserved.</p>
   </footer>
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      const current = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Show auth page if hash is #auth-link
+    if (window.location.hash === '#auth-link') {
+      document.getElementById('main').style.display = 'none';
+      document.getElementById('qa').style.display = 'none';
+      document.getElementById('support').style.display = 'none';
+      document.getElementById('links').style.display = 'none';
+      document.getElementById('auth').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
-
