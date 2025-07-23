@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixelmark PLC</title>
   <style>
-    :root {
-      --main-color: #5a3d2b;
-      --text-color: #333;
-      --bg-color: #fff;
-    }
-    [data-theme="dark"] {
-      --main-color: #5a3d2b;
-      --text-color: #eee;
-      --bg-color: #1a1a1a;
-    }
+    $1
+  a { color: var(--main-color); }
+[data-theme="dark"] {
+  --main-color: #5a3d2b;
+  --text-color: #eee;
+  --bg-color: #1a1a1a;
+}
+[data-theme="dark"] a {
+  color: #f5c16c;
+}
     body {
       font-family: Arial, sans-serif;
       margin: 0;
