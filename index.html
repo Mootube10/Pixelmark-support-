@@ -5,18 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixelmark PLC</title>
   <style>
-    $1
-  a { color: var(--main-color); }
-[data-theme="dark"] {
-  --main-color: #5a3d2b;
-  --text-color: #eee;
-  --bg-color: #1a1a1a;
-}
-[data-theme="dark"] a {
-  color: #f5c16c;
-}
+    :root {
+      --main-color: #5a3d2b;
+      --text-color: #333;
+      --bg-color: #fff;
+      --accent-color: #c6975c;
+    }
+    [data-theme="dark"] {
+      --main-color: #5a3d2b;
+      --text-color: #eee;
+      --bg-color: #1a1a1a;
+    }
+    [data-theme="dark"] a {
+      color: #f5c16c;
+    }
+    a {
+      color: var(--main-color);
+      transition: color 0.3s ease;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background: var(--bg-color);
       color: var(--text-color);
@@ -24,25 +32,36 @@
     header {
       background: var(--main-color);
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     nav {
-      background: #eee;
+      background: #f6f6f6;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
       padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
     nav a {
       text-decoration: none;
       color: var(--main-color);
-      font-weight: bold;
-      cursor: pointer;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: var(--accent-color);
+      color: white;
     }
     .container {
       padding: 2rem;
       display: none;
+      max-width: 800px;
+      margin: auto;
     }
     .active {
       display: block;
@@ -51,8 +70,8 @@
       background: var(--main-color);
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
     }
     .dark-toggle {
       position: fixed;
@@ -61,8 +80,15 @@
       background: var(--main-color);
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+    .dark-toggle:hover {
+      background: var(--accent-color);
     }
   </style>
 </head>
