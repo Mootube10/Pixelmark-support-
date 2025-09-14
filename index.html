@@ -49,7 +49,7 @@
       font-weight: 600;
       text-decoration: none;
     }
-    h3 { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; color: #6b4226; }
+    h3, h2 { color: #6b4226; margin-bottom: 1.5rem; text-align: center; }
     .feature-box {
       background: #fff;
       padding: 2rem;
@@ -79,6 +79,41 @@
       padding: 1.5rem;
       margin-top: 2rem;
     }
+
+    /* Staff Page */
+    #staff {
+      text-align: center;
+    }
+    .staff-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .staff-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .staff-card:hover { transform: translateY(-5px); }
+    .staff-card img {
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      width: 120px;
+      height: 120px;
+    }
+    .staff-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #6b4226;
+    }
+    .staff-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -88,8 +123,8 @@
       <a onclick="showPage('home')">Home</a>
       <a onclick="showPage('about')">About</a>
       <a onclick="showPage('features')">Features</a>
+      <a onclick="showPage('staff')">Staff</a>
       <a onclick="showPage('links')">Links</a>
-      <a onclick="showPage('Staff')">Staff</a>
     </nav>
   </header>
 
@@ -129,59 +164,57 @@
     </div>
   </section>
 
-  <!-- Links Page -->
-  <section id="links" class="page">
-    <h3>Join the Pixelmark Experience</h3>
-    <div class="links" style="max-width:500px; margin:auto;">
-      <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC">🌐 Roblox Group</a>
-      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3">🎮 Play the Game</a>
-      <a href="https://discord.gg/rvT2tEyDk7" target="_blank">💬 Join Our Discord</a>
-    </div>
-  </section>
-
-  <!-- Staff -->
-  <section id="staff">
+  <!-- Staff Page -->
+  <section id="staff" class="page">
     <h2>Meet Our Staff</h2>
     <div class="staff-container">
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8EEAFBDA04E35AAD211D3C02600954C4-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 1">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8EEAFBDA04E35AAD211D3C02600954C4-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="DamianS201209">
         <h3>DamianS201209</h3>
         <p>Chief Executive Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-30A797B751E3FAC721E5DAE1EAB8D594-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 2">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-30A797B751E3FAC721E5DAE1EAB8D594-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Drsanderandre">
         <h3>Drsanderandre</h3>
-        <p>Deputy Cheif Executive Officer</p>
+        <p>Deputy Chief Executive Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-65CD725D31177DC7F9534504738F9BB3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 3">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-65CD725D31177DC7F9534504738F9BB3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Jake">
         <h3>Jake</h3>
-        <p>Deputy Cheif Executive Officer</p>
+        <p>Deputy Chief Executive Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-D5A6D60D8CF0865EDA9D736B4F327EF2-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 4">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-D5A6D60D8CF0865EDA9D736B4F327EF2-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="sagaTa6">
         <h3>sagaTa6</h3>
-        <p>Deputy Cheif Executive Officer</p>
+        <p>Deputy Chief Executive Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-EB1C39502064E11822CA35DF873FD4E2-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 5">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-EB1C39502064E11822CA35DF873FD4E2-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Emdelarclay">
         <h3>Emdelarclay</h3>
         <p>Chief Operations Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-FA7707788748ACAFAC6858B9B13BB436-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 6">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-FA7707788748ACAFAC6858B9B13BB436-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="STDW09">
         <h3>STDW09</h3>
         <p>Chief Financial Officer</p>
       </div>
       <div class="staff-card">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-0325EA00DBD85A9621CEFDD17ABD7B24-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Staff 7">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-0325EA00DBD85A9621CEFDD17ABD7B24-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Jacob_XD">
         <h3>Jacob_XD</h3>
         <p>Chief Staffing Officer</p>
-
-    <a class="btn" onclick="showPage('home')">Back Home</a>
+      </div>
     </div>
   </section>
 
+  <!-- Links Page -->
+  <section id="links" class="page">
+    <h3>Join the Pixelmark Experience</h3>
+    <div class="links" style="max-width:500px; margin:auto;">
+      <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">🌐 Roblox Group</a>
+      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">🎮 Play the Game</a>
+      <a href="https://discord.gg/rvT2tEyDk7" target="_blank">💬 Join Our Discord</a>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Pixelmark PLC | Roblox Shopping Group</p>
@@ -195,4 +228,3 @@
   </script>
 </body>
 </html>
-
