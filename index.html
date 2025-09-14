@@ -2,160 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pixelmark PLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixelmark PLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-color: #5a3d2b;
-      --text-color: #333;
-      --bg-color: #fff;
-      --accent-color: #c6975c;
-    }
-    [data-theme="dark"] {
-      --main-color: #5a3d2b;
-      --text-color: #eee;
-      --bg-color: #1a1a1a;
-    }
-    [data-theme="dark"] a {
-      color: #f5c16c;
-    }
-    a {
-      color: var(--main-color);
-      transition: color 0.3s ease;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      background: #f9f5f1;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: var(--main-color);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    nav {
-      background: #f6f6f6;
+      background: #6b4226; /* Brownish theme color */
+      color: #fff;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      justify-content: space-between;
+      align-items: center;
     }
+    header h1 { font-size: 1.8rem; }
     nav a {
+      color: #fff;
       text-decoration: none;
-      color: var(--main-color);
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: background 0.3s;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    nav a:hover {
-      background: var(--accent-color);
+    nav a:hover { color: #ffda9e; }
+    .hero {
+      background: url('https://tr.rbxcdn.com/6ec3e05f0f95b4a6d06ddfcf60a80836/768/432/Image/Webp') center/cover no-repeat;
       color: white;
+      text-align: center;
+      padding: 6rem 2rem;
     }
-    .container {
-      padding: 2rem;
-      display: none;
-      max-width: 800px;
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px #000; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; text-shadow: 1px 1px 3px #000; }
+    .hero a {
+      background: #ffda9e;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      color: #6b4226;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
       margin: auto;
     }
-    .active {
-      display: block;
-    }
-    footer {
-      background: var(--main-color);
-      color: white;
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
       text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
+      color: #6b4226;
     }
-    .dark-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--main-color);
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-      z-index: 1000;
+    .about, .features, .links {
+      display: grid;
+      gap: 2rem;
     }
-    .dark-toggle:hover {
-      background: var(--accent-color);
+    .feature-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .feature-box h4 { margin-bottom: 1rem; color: #6b4226; }
+    .links a {
+      display: block;
+      background: #6b4226;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .links a:hover { background: #52311b; }
+    footer {
+      background: #6b4226;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   <header>
-    <h1>pixelmark PLC</h1>
-    <p>Official Website</p>
+    <h1>Pixelmark PLC</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#links">Links</a>
+    </nav>
   </header>
-  <nav>
-    <a onclick="showSection('main')">Main</a>
-    <a onclick="showSection('qa')">Q&A</a>
-    <a onclick="showSection('support')">Support</a>
-    <a onclick="showSection('links')">Links</a>
-  </nav>
 
-  <div id="main" class="container active">
-    <h2>Welcome to pixelmark – Your Ultimate Roblox Shopping Destination!</h2>
-    <p>Step into the world of PixelMart, where virtual shopping meets real fun! From fresh groceries to stylish home items, we’ve got everything your Roblox character needs – all in one place. Join thousands of happy shoppers and experience the future of in-game retail, Pixel-style.</p>
-    <p>🛒 Explore. Save. Play.</p>
-  </div>
+  <section class="hero">
+    <h2>Welcome to Pixelmark PLC</h2>
+    <p>The future of Roblox shopping starts here.</p>
+    <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Play Our Game</a>
+  </section>
 
-  <div id="qa" class="container">
-    <h2>Q&A</h2>
-    <p><strong>Q: What is Pixelmark?</strong><br>A: Pixelmark is a shopping and roleplay group on Roblox.</p>
-    <p><strong>Q: How do I join the team?</strong><br>A: Applications open in our Discord server. Join to stay updated!</p>
-  </div>
+  <section class="section about" id="about">
+    <h3>About Us</h3>
+    <p>
+      Pixelmark PLC is an innovative Roblox shopping group where players can enjoy immersive shopping experiences, 
+      interact with friends, and explore a vibrant virtual world. Our goal is to create the most engaging and fun shopping 
+      platform in Roblox, combining community, creativity, and commerce.
+    </p>
+  </section>
 
-  <div id="support" class="container">
-    <h2>Support</h2>
-    <p>For help or issues, please join our <a href="https://discord.gg/rvT2tEyDk7" target="_blank">Discord server</a>.</p>
-  </div>
+  <section class="section features" id="features">
+    <h3>Why Choose Pixelmark?</h3>
+    <div class="feature-box">
+      <h4>🛍️ Virtual Shopping</h4>
+      <p>Explore multiple retailers and shop for unique Roblox-inspired items in a realistic mall environment.</p>
+    </div>
+    <div class="feature-box">
+      <h4>🤝 Community Driven</h4>
+      <p>Join our friendly Roblox and Discord communities to trade, hang out, and attend exclusive events.</p>
+    </div>
+    <div class="feature-box">
+      <h4>🎮 Interactive Gameplay</h4>
+      <p>More than shopping—Pixelmark features events, social spaces, and mini-games for endless fun.</p>
+    </div>
+  </section>
 
-  <div id="links" class="container">
-    <h2>Important Links</h2>
-    <ul>
-      <li><a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">Roblox Group</a></li>
-      <li><a href="https://discord.gg/rvT2tEyDk7" target="_blank">Discord Server</a></li>
-      <li><a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Main Game</a></li>
-    </ul>
-  </div>
-
-  <div id="auth" class="container">
-    <h2>Roblox Authorization</h2>
-    <p>If you were redirected here, please continue the Roblox authentication process.</p>
-  </div>
+  <section class="section links" id="links">
+    <h3>Join the Pixelmark Experience</h3>
+    <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">🌐 Roblox Group</a>
+    <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">🎮 Play the Game</a>
+    <a href="https://discord.gg/rvT2tEyDk7" target="_blank">💬 Join Our Discord</a>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pixelmark PLC. All rights reserved.</p>
+    <p>&copy; 2025 Pixelmark PLC | Roblox Shopping Group</p>
   </footer>
-
-  <script>
-    function toggleDarkMode() {
-      const current = document.documentElement.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    }
-
-    function showSection(id) {
-      const sections = document.querySelectorAll('.container');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    // Auto-show Roblox auth page if #auth-link is in URL
-    if (window.location.hash === '#auth-link') {
-      showSection('auth');
-    }
-  </script>
 </body>
 </html>
