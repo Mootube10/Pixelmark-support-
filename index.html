@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixelmark PLC</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -14,7 +14,7 @@
       line-height: 1.6;
     }
     header {
-      background: #6b4226; /* Brownish theme color */
+      background: #6b4226;
       color: #fff;
       padding: 1rem 2rem;
       display: flex;
@@ -27,9 +27,12 @@
       text-decoration: none;
       margin: 0 1rem;
       font-weight: 500;
+      cursor: pointer;
       transition: color 0.3s;
     }
     nav a:hover { color: #ffda9e; }
+    .page { display: none; padding: 3rem 2rem; }
+    .active { display: block; }
     .hero {
       background: url('https://tr.rbxcdn.com/6ec3e05f0f95b4a6d06ddfcf60a80836/768/432/Image/Webp') center/cover no-repeat;
       color: white;
@@ -46,27 +49,14 @@
       font-weight: 600;
       text-decoration: none;
     }
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .section h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #6b4226;
-    }
-    .about, .features, .links {
-      display: grid;
-      gap: 2rem;
-    }
+    h3 { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; color: #6b4226; }
     .feature-box {
       background: #fff;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       text-align: center;
+      margin: 1rem 0;
     }
     .feature-box h4 { margin-bottom: 1rem; color: #6b4226; }
     .links a {
@@ -78,6 +68,7 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
+      margin: 0.5rem 0;
       transition: 0.3s;
     }
     .links a:hover { background: #52311b; }
@@ -94,28 +85,34 @@
   <header>
     <h1>Pixelmark PLC</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#links">Links</a>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('about')">About</a>
+      <a onclick="showPage('features')">Features</a>
+      <a onclick="showPage('links')">Links</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to Pixelmark PLC</h2>
-    <p>The future of Roblox shopping starts here.</p>
-    <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Play Our Game</a>
+  <!-- Home Page -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <h2>Welcome to Pixelmark PLC</h2>
+      <p>The future of Roblox shopping starts here.</p>
+      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">Play Our Game</a>
+    </div>
   </section>
 
-  <section class="section about" id="about">
+  <!-- About Page -->
+  <section id="about" class="page">
     <h3>About Us</h3>
-    <p>
+    <p style="max-width: 800px; margin: auto; text-align: center;">
       Pixelmark PLC is an innovative Roblox shopping group where players can enjoy immersive shopping experiences, 
-      interact with friends, and explore a vibrant virtual world. Our goal is to create the most engaging and fun shopping 
-      platform in Roblox, combining community, creativity, and commerce.
+      interact with friends, and explore a vibrant virtual world. Our goal is to create the most engaging and fun 
+      shopping platform in Roblox, combining community, creativity, and commerce.
     </p>
   </section>
 
-  <section class="section features" id="features">
+  <!-- Features Page -->
+  <section id="features" class="page">
     <h3>Why Choose Pixelmark?</h3>
     <div class="feature-box">
       <h4>🛍️ Virtual Shopping</h4>
@@ -131,15 +128,26 @@
     </div>
   </section>
 
-  <section class="section links" id="links">
+  <!-- Links Page -->
+  <section id="links" class="page">
     <h3>Join the Pixelmark Experience</h3>
-    <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">🌐 Roblox Group</a>
-    <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">🎮 Play the Game</a>
-    <a href="https://discord.gg/rvT2tEyDk7" target="_blank">💬 Join Our Discord</a>
+    <div class="links" style="max-width:500px; margin:auto;">
+      <a href="https://www.roblox.com/communities/16031525/Pixelmark-PLC#!/about" target="_blank">🌐 Roblox Group</a>
+      <a href="https://www.roblox.com/games/18361728089/Pixelmark-V3" target="_blank">🎮 Play the Game</a>
+      <a href="https://discord.gg/rvT2tEyDk7" target="_blank">💬 Join Our Discord</a>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Pixelmark PLC | Roblox Shopping Group</p>
   </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
+
